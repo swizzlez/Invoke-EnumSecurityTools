@@ -12,7 +12,7 @@
             
       .EXAMPLE
         PS>Import-Module .\Invoke-EnumSecurityTools.ps1
-        PS>EnumSecurityTools
+        PS>Invoke-EnumSecurityTools
             Enumerating Security Tools...
 
             Security_Tool                                Status
