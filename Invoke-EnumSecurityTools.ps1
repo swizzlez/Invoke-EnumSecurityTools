@@ -50,10 +50,12 @@
     WdNisSvc="Windows Defender Network Inspection Service"
     "Parity Agent"="Bit 9 Parity Application Whitelisting"
     "csagent"="CrowdStrike Falcon EDR Agent"
+    MpsSvc="Windows Firewall"
+    Glasswire="Glasswire Application Firewall"
     }
 
 
-    Write-Output "Enumerating Security Tools..."
+    Write-Output "Enumerating Security Tools (Services)..."
     $objParams = @{
         "Security_Tool"="Tool Name"
         "Status"="Status"
@@ -66,4 +68,33 @@
                 Write-Output $toolObj
             } 
         }
+    $secCenterObjParams = @{
+        "Security_Tool"="Tool Name"
+        "Registered Entry"="Display Name"
+    }
+
+    # Enumerating SecurityCenter AntiVirusProduct Registrations
+    Get-CimInstance -Namespace root/SecurityCenter2 -ClassName AntiVirusProduct | ForEach-Object {
+      if ($_.displayName) {
+        $toolObj.Security_Tool = $_.displayName
+        $toolObj.Status = "SecurityCenter (AntiVirus)"
+        Write-Output $toolObj        
+      }
+    }
+    # Enumerating SecurityCenter AntiSpywareProduct Registrations
+    Get-CimInstance -Namespace root/SecurityCenter2 -ClassName AntiSpywareProduct | ForEach-Object {
+      if ($_.displayName) {
+        $toolObj.Security_Tool = $_.displayName
+        $toolObj.Status = "SecurityCenter (AntiSpyware)"
+        Write-Output $toolObj        
+      }
+    }
+    # Enumerating SecurityCenter FirewallProduct Registrations
+    Get-CimInstance -Namespace root/SecurityCenter2 -ClassName FirewallProduct | ForEach-Object {
+      if ($_.displayName) {
+        $toolObj.Security_Tool = $_.displayName
+        $toolObj.Status = "SecurityCenter (Firewall)"
+        Write-Output $toolObj        
+      }
+    }
 }
