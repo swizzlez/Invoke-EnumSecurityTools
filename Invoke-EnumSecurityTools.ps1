@@ -68,10 +68,6 @@
                 Write-Output $toolObj
             } 
         }
-    $secCenterObjParams = @{
-        "Security_Tool"="Tool Name"
-        "Registered Entry"="Display Name"
-    }
 
     # Enumerating SecurityCenter AntiVirusProduct Registrations
     Get-CimInstance -Namespace root/SecurityCenter2 -ClassName AntiVirusProduct | ForEach-Object {
