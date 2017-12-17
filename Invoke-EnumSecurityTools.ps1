@@ -55,7 +55,7 @@
     }
 
 
-    Write-Output "Enumerating Security Tools (Services)..."
+    Write-Output "Enumerating Security Tools..."
     $objParams = @{
         "Security_Tool"="Tool Name"
         "Status"="Status"
