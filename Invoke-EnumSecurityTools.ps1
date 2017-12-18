@@ -48,10 +48,9 @@
     EMET_Service="Microsoft EMET"
     Sense="Windows Defender Advanced Threat Protection Service"
     WdNisSvc="Windows Defender Network Inspection Service"
-    "Parity Agent"="Bit 9 Parity Application Whitelisting"
-    "Bit9 Agent"="Bit 9 Parity Application Whitelisting"
+    Parity="Bit 9 Parity Application Whitelisting"
     "csagent"="CrowdStrike Falcon EDR Agent"
-    "Carbon Black Sensor"="Carbon Black Enterprise Response"
+    CarbonBlack="Carbon Black Enterprise Response"d"csagent"="CrowdStrike Falcon EDR Agent"
     }
 
 
