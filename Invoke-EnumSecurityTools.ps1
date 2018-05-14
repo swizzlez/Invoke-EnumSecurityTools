@@ -50,6 +50,7 @@
     WdNisSvc="Windows Defender Network Inspection Service"
     "Parity Agent"="Bit 9 Parity Application Whitelisting"
     "csagent"="CrowdStrike Falcon EDR Agent"
+    CSFalcon="CrowdStrike Falcon EDR Agent"
     MpsSvc="Windows Firewall"
     Glasswire="Glasswire Application Firewall"
     }
